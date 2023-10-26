@@ -42,6 +42,7 @@ jobs:
           require_passed_checks: false
           sort: 'created'
           direction: 'desc'
+          require_auto_merge_enabled: false
 
   # update-branch:
   #   # permissions:
