@@ -1,8 +1,11 @@
 name: autoupdate
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+
+  schedule:
+    - cron: '*/1 * * * *'
 jobs:
   autoupdate:
     name: autoupdate
