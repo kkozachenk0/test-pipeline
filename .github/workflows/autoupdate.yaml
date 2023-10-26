@@ -30,4 +30,3 @@ jobs:
           require_passed_checks: true
           sort: 'created'
           direction: 'desc'
-          require_auto_merge_enabled: false
