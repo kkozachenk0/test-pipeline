@@ -30,33 +30,33 @@ jobs:
 #           repository: ${{ github.repository }}
 #           ref: ${{ github.event.workflow_run.head_branch }}
 
-  autoupdate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Automatically update PR
-        uses: adRise/update-pr-branch@v0.7.0
-        with:
-          token: '${{ secrets.GITHUB_TOKEN }}'
-          base: 'main'
-          required_approval_count: 0
-          require_passed_checks: false
-          sort: 'created'
-          direction: 'desc'
-          require_auto_merge_enabled: false
-
-  # update-branch:
-  #   # permissions:
-  #   #   id-token: write
-  #   #   contents: read
-  #   #   issues: write
-  #   #   pull-requests: write
+  # autoupdate:
   #   runs-on: ubuntu-latest
   #   steps:
-  #     - uses: lcdsmao/update-branch@v3
+  #     - name: Automatically update PR
+  #       uses: adRise/update-pr-branch@v0.7.0
   #       with:
-  #         # Or use personal access token
-  #         token: ${{ secrets.GITHUB_TOKEN }}
-  #         # One of MERGE, SQUASH, REBASE (default: MERGE)
-  #         autoMergeMethod: SQUASH
-  #         # Required approvals from all requested reviewers
-  #         allRequestedReviewersMustApprove: false
+  #         token: '${{ secrets.GITHUB_TOKEN }}'
+  #         base: 'main'
+  #         required_approval_count: 0
+  #         require_passed_checks: false
+  #         sort: 'created'
+  #         direction: 'desc'
+  #         require_auto_merge_enabled: false
+
+  update-branch:
+    # permissions:
+    #   id-token: write
+    #   contents: read
+    #   issues: write
+    #   pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lcdsmao/update-branch@v3.1.8
+        with:
+          # Or use personal access token
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # One of MERGE, SQUASH, REBASE (default: MERGE)
+          autoMergeMethod: SQUASH
+          # Required approvals from all requested reviewers
+          allRequestedReviewersMustApprove: false
