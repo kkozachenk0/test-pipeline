@@ -5,6 +5,11 @@ on:
     branches:
       - main  # Change this to your project's main branch
 
+  workflow_run:
+    workflows: ["Auto Update"]
+    types:
+      - completed
+
 jobs:
   lint:
     runs-on: ubuntu-latest
