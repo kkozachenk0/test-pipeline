@@ -1,0 +1,25 @@
+name: Pylint
+
+on:
+  pull_request:
+    branches:
+      - main  # Change this to your project's main branch
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8  # Change to your desired Python version
+
+      - name: Install dependencies
+        run: pip install pylint
+
+      - name: Run Pylint
+        run: pylint source
