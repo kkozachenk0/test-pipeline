@@ -5,7 +5,11 @@ on:
     branches:
       - main
 
-# jobs:
+jobs:
+
+
+
+
 #   autoupdate:
 #     name: autoupdate
 #     runs-on: ubuntu-22.04
@@ -26,7 +30,7 @@ on:
 #           repository: ${{ github.repository }}
 #           ref: ${{ github.event.workflow_run.head_branch }}
 
-  autoupd:
+  autoupdate:
     runs-on: ubuntu-latest
     steps:
       - name: Automatically update PR
