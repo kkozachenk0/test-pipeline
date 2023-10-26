@@ -1,10 +1,10 @@
 name: autoupdate
 on:
-  push: {}
+  # push: {}
 
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
 
   # schedule:
     # - cron: '*/1 * * * *'
@@ -13,6 +13,7 @@ jobs:
     name: autoupdate
     runs-on: ubuntu-22.04
     steps:
-      - uses: docker://chinthakagodawita/autoupdate-action:v1
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        - name: Auto Update
+          uses: chinthakagodawita/autoupdate@v1.7.0  
+          env:
+            GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
