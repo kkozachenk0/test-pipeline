@@ -32,11 +32,11 @@ jobs:
   #         direction: 'desc'
 
   update-branch:
-    permissions:
-      id-token: write
-      contents: read
-      issues: write
-      pull-requests: write
+    # permissions:
+    #   id-token: write
+    #   contents: read
+    #   issues: write
+    #   pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: lcdsmao/update-branch@v3
