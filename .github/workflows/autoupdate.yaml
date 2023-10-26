@@ -1,13 +1,62 @@
 name: autoupdate
 on:
+
   push:
     branches:
       - main
+
 jobs:
+
+
+
+
   autoupdate:
     name: autoupdate
     runs-on: ubuntu-22.04
     steps:
-      - uses: docker://chinthakagodawita/autoupdate-action:v1
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        - name: Auto Update
+          uses: chinthakagodawita/autoupdate@v1.7.0  
+          env:
+            GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+#   trigger_b:
+#     runs-on: ubuntu-latest
+#     needs: autoupdate
+#     # if: github.event.workflow_run.event == 'workflow_run' && github.event.workflow_run.workflow == 'Auto Update'
+#     steps:
+#       - name: Trigger checks
+#         uses: actions/checkout@v2 # Use the appropriate action for your needs
+#         with:
+#           repository: ${{ github.repository }}
+#           ref: ${{ github.event.workflow_run.head_branch }}
+
+  # autoupdate:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Automatically update PR
+  #       uses: adRise/update-pr-branch@v0.7.0
+  #       with:
+  #         token: '${{ secrets.GITHUB_TOKEN }}'
+  #         base: 'main'
+  #         required_approval_count: 0
+  #         require_passed_checks: false
+  #         sort: 'created'
+  #         direction: 'desc'
+  #         require_auto_merge_enabled: false
+
+  # update-branch:
+  #   # permissions:
+  #   #   id-token: write
+  #   #   contents: read
+  #   #   issues: write
+  #   #   pull-requests: write
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: lcdsmao/update-branch@v3.1.8
+  #       with:
+  #         # Or use personal access token
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #         # One of MERGE, SQUASH, REBASE (default: MERGE)
+  #         autoMergeMethod: SQUASH
+  #         # Required approvals from all requested reviewers
+  #         allRequestedReviewersMustApprove: false
