@@ -26,7 +26,7 @@ on:
 #           repository: ${{ github.repository }}
 #           ref: ${{ github.event.workflow_run.head_branch }}
 
-  autoupdate:
+  autoupd:
     runs-on: ubuntu-latest
     steps:
       - name: Automatically update PR
