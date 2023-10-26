@@ -17,7 +17,7 @@ jobs:
         - name: Auto Update
           uses: chinthakagodawita/autoupdate@v1.7.0  
           env:
-            GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+            GITHUB_TOKEN: '${{ secrets.TEST_PAT }}'
 
 #   trigger_b:
 #     runs-on: ubuntu-latest
