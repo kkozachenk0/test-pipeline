@@ -18,7 +18,7 @@ jobs:
   trigger_b:
     runs-on: ubuntu-latest
     needs: autoupdate
-    if: github.event.workflow_run.event == 'workflow_run' && github.event.workflow_run.workflow == 'Auto Update'
+    # if: github.event.workflow_run.event == 'workflow_run' && github.event.workflow_run.workflow == 'Auto Update'
     steps:
       - name: Trigger checks
         uses: actions/checkout@v2 # Use the appropriate action for your needs
