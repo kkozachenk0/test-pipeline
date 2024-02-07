@@ -1,5 +1,8 @@
 name: "Check PR content"
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main  # Change this to your project's main branch
 
 jobs:
   check_pr:
