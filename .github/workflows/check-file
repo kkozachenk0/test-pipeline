@@ -1,12 +1,14 @@
-name: "Check PR content"
+name: Check_
+
 on:
   pull_request:
     branches:
       - main  # Change this to your project's main branch
 
 jobs:
-  check_pr:
+  check_:
     runs-on: ubuntu-latest
+
     steps:
     - name: Check PR
       uses: JJ/github-pr-contains-action@releases/v13
